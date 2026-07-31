@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 하계수련회 첫째 날 청소 구역</title>
+<meta name="description" content="2026 하계수련회 첫째 날(주일) 청소 구역 배정표. 이름을 검색하면 담당 구역과 함께 청소하는 사람을 볼 수 있습니다.">
+<meta name="theme-color" content="#0F323A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F323A;
+  --ink-soft:#5A7A80;
+  --paper:#EEF3EF;
+  --card:#FFFFFF;
+  --rule:#D6E2DC;
+  --rule-soft:#E7EEE9;
+  --marker:#FFE066;
+  --me-text:#6B3A00;
+  --stamp:#BE3F35;
+  --teal:#2E7D8F;
+  --shadow:0 1px 0 rgba(15,50,58,.06), 0 8px 24px -18px rgba(15,50,58,.5);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 72px}
+
+/* ---------- 머리말 ---------- */
+.masthead{padding:38px 0 22px;border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin:0 0 10px;
+}
+h1{
+  font-family:"Gowun Batang",serif;font-weight:700;
+  font-size:clamp(30px,7.5vw,50px);line-height:1.12;letter-spacing:-.01em;
+  margin:0;
+}
+h1 .day{display:block;font-size:.44em;letter-spacing:.02em;color:var(--ink-soft);margin-top:10px;font-family:"IBM Plex Sans KR",sans-serif;font-weight:500}
+.tally{
+  display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 0;
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);
+}
+.tally b{color:var(--ink);font-weight:500}
+
+/* ---------- 검색 ---------- */
+.finder{
+  position:sticky;top:0;z-index:20;
+  background:var(--paper);
+  padding:14px 0 12px;
+  margin-bottom:8px;
+  border-bottom:1px solid var(--rule);
+}
+.finder-inner{display:flex;gap:8px}
+.field{position:relative;flex:1}
+input[type=search]{
+  width:100%;appearance:none;
+  font-family:inherit;font-size:17px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1.5px solid var(--rule);border-radius:0;
+  padding:13px 14px;outline:none;
+}
+input[type=search]::placeholder{color:#9FB4B4;font-weight:400}
+input[type=search]:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(46,125,143,.15)}
+button{
+  font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;
+  background:var(--ink);color:#fff;border:1.5px solid var(--ink);
+  padding:0 22px;border-radius:0;white-space:nowrap;
+}
+button:hover{background:#164450;border-color:#164450}
+button:focus-visible,input:focus-visible,.sug:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.sug{
+  background:var(--card);border:1px solid var(--rule);color:var(--ink);
+  font-size:14px;font-weight:500;padding:5px 11px;
+}
+.sug:hover{background:var(--marker);border-color:#E6C43C}
+
+/* ---------- 결과 ---------- */
+.result{margin:20px 0 6px}
+.result:empty{display:none}
+.rcard{
+  background:var(--card);border:1.5px solid var(--ink);
+  box-shadow:var(--shadow);padding:20px 20px 6px;margin-bottom:16px;
+}
+.rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.rname{font-family:"Gowun Batang",serif;font-size:27px;font-weight:700;line-height:1.2}
+.rmeta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.clear{
+  background:none;color:var(--ink-soft);border:none;padding:0;
+  font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px;
+}
+.clear:hover{background:none;color:var(--ink)}
+
+.stamp{
+  display:inline-block;margin:10px 8px 4px 0;
+  font-family:"Gowun Batang",serif;font-weight:700;font-size:15px;letter-spacing:.02em;
+  color:var(--stamp);border:2.5px solid var(--stamp);border-radius:3px;
+  padding:5px 12px;transform:rotate(-2.2deg);
+  background:rgba(190,63,53,.05);
+}
+.stamp small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:400;letter-spacing:.16em;opacity:.8;transform:none}
+
+.duty{padding:16px 0;border-top:1px solid var(--rule-soft)}
+.duty:first-of-type{border-top:1.5px dashed var(--rule)}
+.dzone{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+.dtask{font-size:19px;font-weight:600;margin:3px 0 9px;letter-spacing:-.01em}
+.dlabel{font-size:12.5px;color:var(--ink-soft);margin-bottom:5px}
+.leadlist{margin:12px 0 2px;padding:0;list-style:none}
+.leadlist li{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--rule-soft);font-size:14.5px}
+.leadlist li span:first-child{flex:1;font-weight:500}
+.leadlist li span:last-child{color:var(--ink-soft);text-align:right}
+.none{color:var(--ink-soft);font-size:14.5px;padding:6px 0 14px}
+
+/* ---------- 명단 이름 ---------- */
+.names{display:flex;flex-wrap:wrap;gap:0 2px;font-size:15.5px}
+.nm{padding:1px 3px;white-space:nowrap}
+.nm:not(:last-child)::after{content:"·";color:#B9CCC6;margin-left:5px}
+.nm.me{
+  font-weight:700;color:var(--me-text);
+  background-image:linear-gradient(var(--marker),var(--marker));
+  background-repeat:no-repeat;background-position:0 62%;background-size:0% 72%;
+  animation:swipe .42s cubic-bezier(.2,.75,.3,1) forwards;
+}
+.nm.me::after{color:#B9CCC6}
+@keyframes swipe{to{background-size:100% 72%}}
+
+/* ---------- 전체 배정표 ---------- */
+.sectitle{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);
+  margin:36px 0 14px;padding-top:14px;border-top:2px solid var(--ink);
+}
+.zone{background:var(--card);border:1px solid var(--rule);margin-bottom:14px;box-shadow:var(--shadow)}
+.zhead{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:13px 16px;background:#F7FAF8;border-bottom:1px solid var(--rule);
+}
+.zname{font-family:"Gowun Batang",serif;font-size:21px;font-weight:700;letter-spacing:-.01em}
+.zlead{font-size:13px;color:var(--ink-soft);white-space:nowrap}
+.zlead b{color:var(--stamp);font-weight:600}
+.row{display:grid;grid-template-columns:38% 1fr;gap:14px;padding:11px 16px;border-top:1px solid var(--rule-soft)}
+.row:first-of-type{border-top:none}
+.row.split{border-top:1.5px dashed var(--rule)}
+.task{font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.45}
+.grp{font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:1px}
+.row .names{font-size:14.5px}
+.row.hit{background:#FFFDF0}
+
+footer{margin-top:34px;font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.7}
+
+@media (max-width:560px){
+  .wrap{padding:0 14px 60px}
+  .masthead{padding:26px 0 18px}
+  .row{grid-template-columns:1fr;gap:4px;padding:12px 14px}
+  .task{font-weight:600}
+  .finder-inner{gap:6px}
+  button{padding:0 16px;font-size:15px}
+  .rcard{padding:18px 16px 4px}
+}
+@media (prefers-reduced-motion:reduce){
+  .nm.me{animation:none;background-size:100% 72%}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">2026 하계수련회 · 당진</p>
+    <h1>첫째 날 청소 구역<span class="day">주일 · 구역별 배정표</span></h1>
+    <div class="tally">
+      <span>구역 <b id="tZone">0</b></span>
+      <span>세부 항목 <b id="tTask">0</b></span>
+      <span>배정 인원 <b id="tPeople">0</b></span>
+    </div>
+  </header>
+
+  <section class="finder">
+    <div class="finder-inner">
+      <div class="field">
+        <input id="q" type="search" placeholder="이름을 입력하세요 (예: 서영)" autocomplete="off" enterkeyhint="search" aria-label="이름 검색">
+      </div>
+      <button id="go" type="button">찾기</button>
+    </div>
+    <div class="sugs" id="sugs"></div>
+  </section>
+
+  <div class="result" id="result" role="status" aria-live="polite"></div>
+
+  <h2 class="sectitle">전체 배정표</h2>
+  <div id="board"></div>
+
+  <footer>
+    첫째 날 청소는 저녁 집회 전까지 마칩니다.<br>배정에 빠진 내용이 있으면 생활스텝에게 알려 주세요.
+  </footer>
+</div>
+
+<script>
+const DATA = [
+  {zone:"성전", lead:"서영", rows:[
+    {task:"강대상, 음향 설비", members:["이효진","정지연","최정화","성연후","박동민"]},
+    {task:"바닥, 벽", members:["임정희","김기영"]},
+    {task:"창문, 에어컨", members:["임지영"]},
+    {task:"화장실", members:["김해림"]},
+    {task:"로비", members:["서영","김두연","신세호","홍윤미","최지웅","김현수"]}
+  ]},
+  {zone:"식당", lead:"이재경", rows:[
+    {task:"주방", members:["이재경","자모팀","김유경","김한식"]},
+    {task:"바닥, 방", members:["임정희","김기영"]},
+    {task:"입구 및 신발장", members:["박서연","홍아율"]},
+    {task:"창문, 에어컨", members:["임지영"]}
+  ]},
+  {zone:"세면장·화장실·라커룸", lead:"이태호", rows:[
+    {task:"남자 샤워장 및 화장실, 라커룸", members:["김태현","이태호","김형석","최승원"]},
+    {task:"여자 라커룸 및 화장실(운동장)", members:["송민서","이채령"]},
+    {task:"여자 샤워장(수영장)", members:["유아란","김다현"]}
+  ]},
+  {zone:"방가로", lead:"전혜경", rows:[
+    {task:"1조", members:["전혜경","이지원"]},
+    {task:"2조", members:["연가희"]},
+    {task:"3조", members:["연가은"]},
+    {task:"4조", members:["김혜영"]}
+  ]},
+  {zone:"기타", lead:"이순명", rows:[
+    {task:"사택", members:[]},
+    {task:"게스트룸", members:["정미정","김해림"]},
+    {task:"유아방, 텐트촌", members:["홍상민"]},
+    {task:"분리수거", members:["성연후","이정우","백주원"]},
+    {task:"사택-성전 손잡이, 방가로 벤치", members:["김한나","최송희"]},
+    {task:"팔각정 및 보도블록, 거미줄 제거", members:["안효섭","주민준"]},
+    {task:"그레이팅", members:["강준석","임은성","이재형","김혜성"]},
+    {task:"방가로 주변 정리 및 식수 관리", members:["박정근"]},
+    {task:"잔반구덩이", members:["김한식"]},
+    {task:"침낭박스 정리", members:["김성관","박하성","박서준"]},
+    {task:"라벨", members:["정지연","김성관"]},
+    {task:"생활물품 정리", members:["백승은"]},
+    {task:"옷걸이", members:["김성관","박하성","박서준"]},
+    {task:"예초기", members:["김한식","강경남"]},
+    {task:"게임물품 정리", group:"게임스탭", members:["강산","송원재","심기웅","박준우","사토미"], split:true, noLead:true},
+    {task:"인체실험", members:["김한식","박준우","이아영","김다해","이정화"], noLead:true}
+  ]}
+];
+
+const norm = s => (s||"").replace(/\s+/g,"").trim();
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* 색인 */
+const people = [];
+DATA.forEach((z,zi)=>z.rows.forEach((r,ri)=>r.members.forEach(m=>{
+  if(!people.includes(m)) people.push(m);
+  r._id = "r"+zi+"-"+ri;
+})));
+DATA.forEach(z=>{ if(!people.includes(z.lead)) people.push(z.lead); });
+people.sort((a,b)=>a.localeCompare(b,"ko"));
+
+const totalTasks = DATA.reduce((n,z)=>n+z.rows.length,0);
+document.getElementById("tZone").textContent = DATA.length;
+document.getElementById("tTask").textContent = totalTasks;
+document.getElementById("tPeople").textContent = people.filter(p=>p!=="자모팀").length;
+
+/* 전체 배정표 그리기 */
+const board = document.getElementById("board");
+board.innerHTML = DATA.map((z,zi)=>`
+  <section class="zone">
+    <div class="zhead">
+      <span class="zname">${esc(z.zone)}</span>
+      <span class="zlead">총괄 <b>${esc(z.lead)}</b></span>
+    </div>
+    ${z.rows.map((r,ri)=>`
+      <div class="row${r.split?" split":""}" id="r${zi}-${ri}">
+        <div class="task">${r.group?`<span class="grp">${esc(r.group)}</span>`:""}${esc(r.task)}</div>
+        <div class="names">${r.members.length
+          ? r.members.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join("")
+          : `<span style="color:#9FB4B4">배정 없음</span>`}</div>
+      </div>`).join("")}
+  </section>`).join("");
+
+/* 검색 */
+const q = document.getElementById("q");
+const sugs = document.getElementById("sugs");
+const result = document.getElementById("result");
+
+function renderNames(members, me){
+  return members.map(m=>`<span class="nm${m===me?" me":""}">${esc(m)}</span>`).join("");
+}
+
+function show(name){
+  const leads = DATA.filter(z=>z.lead===name);
+  const duties = [];
+  DATA.forEach((z,zi)=>z.rows.forEach((r,ri)=>{
+    if(r.members.includes(name)) duties.push({zone:z.zone, row:r, id:"r"+zi+"-"+ri});
+  }));
+
+  let html = `<div class="rcard">
+    <div class="rhead">
+      <span class="rname">${esc(name)}</span>
+      <button class="clear" id="clr" type="button">전체 배정표로 돌아가기</button>
+    </div>
+    <p class="rmeta">첫째 날(주일) 청소 배정</p>`;
+
+  leads.forEach(z=>{
+    html += `<div class="stamp"><small>총괄</small>${esc(z.zone)}</div>`;
+  });
+
+  if(leads.length){
+    leads.forEach(z=>{
+      html += `<div class="duty"><div class="dzone">${esc(z.zone)} 총괄</div>
+        <div class="dtask">${esc(z.zone)} 구역 전체를 확인해 주세요</div>
+        <ul class="leadlist">${z.rows.map(r=>`<li><span>${esc(r.task)}</span><span>${r.members.length?esc(r.members.join(", ")):"배정 없음"}</span></li>`).join("")}</ul>
+      </div>`;
+    });
+  }
+
+  if(duties.length){
+    duties.forEach(d=>{
+      html += `<div class="duty">
+        <div class="dzone">${esc(d.zone)}</div>
+        <div class="dtask">${d.row.group?esc(d.row.group)+" · ":""}${esc(d.row.task)}</div>
+        <div class="dlabel">함께 청소하는 사람 ${d.row.members.length}명</div>
+        <div class="names">${renderNames(d.row.members, name)}</div>
+      </div>`;
+    });
+  } else if(!leads.length){
+    html += `<p class="none">배정된 청소 구역이 없습니다. 생활스텝에게 문의해 주세요.</p>`;
+  } else {
+    html += `<p class="none">개별 배정 항목 없이 구역 총괄만 맡고 있습니다.</p>`;
+  }
+
+  html += `</div>`;
+  result.innerHTML = html;
+
+  /* 전체 배정표에도 표시 */
+  document.querySelectorAll(".row").forEach(el=>el.classList.remove("hit"));
+  document.querySelectorAll(".nm").forEach(el=>el.classList.remove("me"));
+  document.querySelectorAll('.names .nm[data-n="'+CSS.escape(name)+'"]').forEach(el=>{
+    el.classList.add("me");
+    el.closest(".row").classList.add("hit");
+  });
+
+  document.getElementById("clr").addEventListener("click", reset);
+  result.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function notFound(term){
+  result.innerHTML = `<div class="rcard">
+    <div class="rhead"><span class="rname">${esc(term)}</span>
+    <button class="clear" id="clr" type="button">전체 배정표로 돌아가기</button></div>
+    <p class="none">배정표에서 찾을 수 없는 이름입니다. 아래 전체 배정표에서 확인하거나 생활스텝에게 문의해 주세요.</p>
+  </div>`;
+  document.getElementById("clr").addEventListener("click", reset);
+}
+
+function reset(){
+  result.innerHTML = "";
+  q.value = "";
+  sugs.innerHTML = "";
+  document.querySelectorAll(".row").forEach(el=>el.classList.remove("hit"));
+  document.querySelectorAll(".nm").forEach(el=>el.classList.remove("me"));
+  q.focus();
+}
+
+function search(){
+  const t = norm(q.value);
+  if(!t){ result.innerHTML=""; return; }
+  let hit = people.find(p=>norm(p)===t) || people.find(p=>norm(p).startsWith(t));
+  if(hit){ q.value = hit; sugs.innerHTML=""; show(hit); }
+  else notFound(q.value.trim());
+}
+
+q.addEventListener("input", ()=>{
+  const t = norm(q.value);
+  if(!t){ sugs.innerHTML=""; return; }
+  const list = people.filter(p=>norm(p).includes(t)).slice(0,8);
+  sugs.innerHTML = list.map(p=>`<button class="sug" type="button">${esc(p)}</button>`).join("");
+});
+sugs.addEventListener("click", e=>{
+  const b = e.target.closest(".sug"); if(!b) return;
+  q.value = b.textContent; sugs.innerHTML=""; show(b.textContent);
+});
+q.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); search(); }});
+document.getElementById("go").addEventListener("click", search);
+</script>
+</body>
+</html>
