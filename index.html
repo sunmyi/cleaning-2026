@@ -124,6 +124,8 @@ button:focus-visible,input:focus-visible,.sug:focus-visible,.tab:focus-visible{o
 .buscols span:nth-child(2){grid-column:2/4}
 .buscols span:nth-child(3){grid-column:5/7}
 .busrow{display:grid;grid-template-columns:22px 1fr 1fr 26px 1fr 1fr;gap:4px;padding:0 4px;margin-bottom:4px}
+.busrow.last{grid-template-columns:22px repeat(5,1fr);margin-top:10px;padding-top:10px;border-top:1.5px dashed var(--rule)}
+.lastlabel{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.06em;color:var(--ink-soft);text-align:center;padding:8px 4px 0}
 .rn{font-family:"IBM Plex Mono",monospace;font-size:10px;color:#A8BFBA;display:flex;align-items:center;justify-content:center}
 .seat{border:1px solid var(--rule);background:#FBFDFC;font-size:13.5px;text-align:center;padding:8px 2px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .seat.empty{background:transparent;border-style:dashed;border-color:#E3ECE8}
@@ -140,6 +142,7 @@ footer{margin-top:34px;font-size:12.5px;color:var(--ink-soft);text-align:center;
   .rcard{padding:18px 16px 6px}
   .bus{padding:12px 6px 14px}
   .buscols,.busrow{grid-template-columns:18px 1fr 1fr 16px 1fr 1fr;gap:3px}
+  .busrow.last{grid-template-columns:18px repeat(5,1fr);gap:3px}
   .seat{font-size:12px;padding:7px 1px}
   .tab{font-size:13px;padding:7px 11px}
 }
@@ -261,13 +264,13 @@ const TRIPS = [
       ["김태현","박정훈","전수진","정순희"],
       ["김다현","연가희","김혜영","김유경"],
       ["사토미","정미정","백승은","이채령"],
-      ["유아란","김두연","김한나","최송희"],
-      ["임정희","김형석","김성관","김기영"]
-    ]
+      ["유아란","김두연","김한나","최송희"]
+    ],
+    busLast:["임정희","김형석",null,"김성관","김기영"]
   },
   {
     panel:"p-back", date:"8/6 (목)", route:"당진 ⇒ 서울",
-    solo:["이재형","최송희"],
+    solo:["이재형","최송희","윤해영"],
     cars:[
       {name:"목회자님 카니발", members:["담임목사님","원로목사님","원로사모님","사모님","차하경"]},
       {name:"심기웅 카니발", members:["심기웅"]},
@@ -287,14 +290,14 @@ const TRIPS = [
       ["백주원","김혜성",null,"김치덕"],
       ["홍윤미","송민서","이아영","임지영"],
       ["최지웅","최승원","연가은","김다해"],
-      ["윤해영","강지희","김한식",null],
+      ["강지희",null,"김한식","김기영"],
       ["신세호","강준석","이정우","김현수"],
       ["김태현","박정훈","전수진","정순희"],
       ["김다현","연가희","김혜영","김유경"],
       ["사토미","정미정","백승은","이채령"],
-      ["유아란","김두연","김한나",null],
-      ["임정희","김형석","김성관","김기영"]
-    ]
+      ["유아란","김두연","김한나",null]
+    ],
+    busLast:["임정희","김형석",null,"김성관",null]
   }
 ];
 
@@ -305,7 +308,7 @@ const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const people = [];
 const add = n => { if(n && n!=="자모팀" && !people.includes(n)) people.push(n); };
 CLEAN.forEach(z=>{ add(z.lead); z.rows.forEach(r=>r.members.forEach(add)); });
-TRIPS.forEach(t=>{ t.cars.forEach(c=>c.members.forEach(add)); t.bus.forEach(r=>r.forEach(add)); (t.solo||[]).forEach(add); });
+TRIPS.forEach(t=>{ t.cars.forEach(c=>c.members.forEach(add)); t.bus.forEach(r=>r.forEach(add)); t.busLast.forEach(add); (t.solo||[]).forEach(add); });
 people.sort((a,b)=>a.localeCompare(b,"ko"));
 
 document.getElementById("tZone").textContent = CLEAN.length;
@@ -329,9 +332,9 @@ function seatHTML(n){
 
 TRIPS.forEach(t=>{
   const carCount = t.cars.reduce((n,c)=>n+c.members.length,0);
-  const busCount = t.bus.flat().filter(Boolean).length;
+  const busCount = t.bus.flat().filter(Boolean).length + t.busLast.filter(Boolean).length;
   document.getElementById(t.panel).innerHTML = `
-    <p class="route">${esc(t.date)} <b>${esc(t.route)}</b> · 승용차 ${carCount}명 · 버스 ${busCount}명${(t.solo||[]).length?` · 개별 ${t.solo.length}명`:""} · 합계 ${carCount+busCount+(t.solo||[]).length}명</p>
+    <p class="route">${esc(t.date)} <b>${esc(t.route)}</b> · 승용차 ${carCount}명 · 버스 ${busCount}명 · 합계 ${carCount+busCount}명</p>
     ${t.cars.map(c=>`
       <div class="car">
         <div class="cname">${esc(c.name)}<span class="ccap">${c.members.length}명</span></div>
@@ -347,14 +350,13 @@ TRIPS.forEach(t=>{
           <span></span>
           ${seatHTML(row[2])}${seatHTML(row[3])}
         </div>`).join("")}
+      <p class="lastlabel">맨 뒷줄 · 5인석</p>
+      <div class="busrow last">
+        <span class="rn">${t.bus.length+1}</span>
+        ${t.busLast.map(seatHTML).join("")}
+      </div>
       <p class="buslegend">↑ 앞쪽 · 아래로 갈수록 뒷좌석</p>
-    </div>
-    ${(t.solo||[]).length?`
-    <div class="zone" style="margin-top:16px">
-      <div class="zhead"><span class="zname">개별 출발</span><span class="zlead">${t.solo.length}명</span></div>
-      <div class="row"><div class="task">따로 이동</div>
-        <div class="names">${t.solo.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join("")}</div></div>
-    </div>`:""}`;
+    </div>`;
 });
 
 /* ===== 탭 ===== */
@@ -388,6 +390,16 @@ function tripInfo(t,name){
       <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
       <div class="dtask">개별 출발</div>
       <div class="dlabel">단체 차량이 아닌 개별 이동입니다.</div>
+    </div>`;
+  }
+  const li = t.busLast.indexOf(name);
+  if(li>=0){
+    const near = [t.busLast[li-1], t.busLast[li+1]].filter(Boolean);
+    return `<div class="duty">
+      <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
+      <div class="dtask">버스 · 맨 뒷줄 (5인석)</div>
+      <div class="dlabel">${near.length?"옆자리":"양옆 모두 빈자리"}</div>
+      <div class="names">${renderNames([name].concat(near).sort((a,b)=>t.busLast.indexOf(a)-t.busLast.indexOf(b)),name)}</div>
     </div>`;
   }
   let ri=-1, ci=-1;
