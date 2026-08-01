@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>2026 하계수련회 첫째 날 청소 구역</title>
-<meta name="description" content="2026 하계수련회 첫째 날(주일) 청소 구역 배정표. 이름을 검색하면 담당 구역과 함께 청소하는 사람을 볼 수 있습니다.">
+<title>2026 하계수련회 · 청소 구역 & 차량 배치</title>
+<meta name="description" content="2026 하계수련회 첫째 날 청소 구역과 8/2·8/6 차량 배치. 이름을 검색하면 내 담당 구역과 탑승 차량을 한 번에 볼 수 있습니다.">
 <meta name="theme-color" content="#0F323A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,94 +26,50 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
+  margin:0;background:var(--paper);color:var(--ink);
   font-family:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  font-size:16px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:900px;margin:0 auto;padding:0 18px 72px}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px 72px}
 
-/* ---------- 머리말 ---------- */
-.masthead{padding:38px 0 22px;border-bottom:2px solid var(--ink)}
-.eyebrow{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--teal);margin:0 0 10px;
-}
-h1{
-  font-family:"Gowun Batang",serif;font-weight:700;
-  font-size:clamp(30px,7.5vw,50px);line-height:1.12;letter-spacing:-.01em;
-  margin:0;
-}
-h1 .day{display:block;font-size:.44em;letter-spacing:.02em;color:var(--ink-soft);margin-top:10px;font-family:"IBM Plex Sans KR",sans-serif;font-weight:500}
-.tally{
-  display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 0;
-  font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);
-}
+/* 머리말 */
+.masthead{padding:36px 0 20px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:0 0 10px}
+h1{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(28px,7vw,46px);line-height:1.14;letter-spacing:-.01em;margin:0}
+h1 .sub{display:block;font-size:.42em;letter-spacing:.02em;color:var(--ink-soft);margin-top:10px;font-family:"IBM Plex Sans KR",sans-serif;font-weight:500}
+.tally{display:flex;gap:20px;flex-wrap:wrap;margin:16px 0 0;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft)}
 .tally b{color:var(--ink);font-weight:500}
 
-/* ---------- 검색 ---------- */
-.finder{
-  position:sticky;top:0;z-index:20;
-  background:var(--paper);
-  padding:14px 0 12px;
-  margin-bottom:8px;
-  border-bottom:1px solid var(--rule);
-}
+/* 검색 */
+.finder{position:sticky;top:0;z-index:20;background:var(--paper);padding:14px 0 12px;margin-bottom:8px;border-bottom:1px solid var(--rule)}
 .finder-inner{display:flex;gap:8px}
-.field{position:relative;flex:1}
-input[type=search]{
-  width:100%;appearance:none;
-  font-family:inherit;font-size:17px;font-weight:500;color:var(--ink);
-  background:var(--card);border:1.5px solid var(--rule);border-radius:0;
-  padding:13px 14px;outline:none;
-}
+.field{flex:1}
+input[type=search]{width:100%;appearance:none;font-family:inherit;font-size:17px;font-weight:500;color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:0;padding:13px 14px;outline:none}
 input[type=search]::placeholder{color:#9FB4B4;font-weight:400}
 input[type=search]:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(46,125,143,.15)}
-button{
-  font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;
-  background:var(--ink);color:#fff;border:1.5px solid var(--ink);
-  padding:0 22px;border-radius:0;white-space:nowrap;
-}
+button{font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;background:var(--ink);color:#fff;border:1.5px solid var(--ink);padding:0 22px;border-radius:0;white-space:nowrap}
 button:hover{background:#164450;border-color:#164450}
-button:focus-visible,input:focus-visible,.sug:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+button:focus-visible,input:focus-visible,.sug:focus-visible,.tab:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .sugs{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
-.sug{
-  background:var(--card);border:1px solid var(--rule);color:var(--ink);
-  font-size:14px;font-weight:500;padding:5px 11px;
-}
+.sug{background:var(--card);border:1px solid var(--rule);color:var(--ink);font-size:14px;font-weight:500;padding:5px 11px}
 .sug:hover{background:var(--marker);border-color:#E6C43C}
 
-/* ---------- 결과 ---------- */
+/* 결과 */
 .result{margin:20px 0 6px}
 .result:empty{display:none}
-.rcard{
-  background:var(--card);border:1.5px solid var(--ink);
-  box-shadow:var(--shadow);padding:20px 20px 6px;margin-bottom:16px;
-}
-.rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.rcard{background:var(--card);border:1.5px solid var(--ink);box-shadow:var(--shadow);padding:20px 20px 8px;margin-bottom:16px}
+.rhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .rname{font-family:"Gowun Batang",serif;font-size:27px;font-weight:700;line-height:1.2}
-.rmeta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
-.clear{
-  background:none;color:var(--ink-soft);border:none;padding:0;
-  font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px;
-}
+.rmeta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);margin:2px 0 0}
+.clear{background:none;color:var(--ink-soft);border:none;padding:0;font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .clear:hover{background:none;color:var(--ink)}
+.stamp{display:inline-block;margin:12px 8px 2px 0;font-family:"Gowun Batang",serif;font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--stamp);border:2.5px solid var(--stamp);border-radius:3px;padding:5px 12px;transform:rotate(-2.2deg);background:rgba(190,63,53,.05)}
+.stamp small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:400;letter-spacing:.16em;opacity:.8}
 
-.stamp{
-  display:inline-block;margin:10px 8px 4px 0;
-  font-family:"Gowun Batang",serif;font-weight:700;font-size:15px;letter-spacing:.02em;
-  color:var(--stamp);border:2.5px solid var(--stamp);border-radius:3px;
-  padding:5px 12px;transform:rotate(-2.2deg);
-  background:rgba(190,63,53,.05);
-}
-.stamp small{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:400;letter-spacing:.16em;opacity:.8;transform:none}
-
-.duty{padding:16px 0;border-top:1px solid var(--rule-soft)}
-.duty:first-of-type{border-top:1.5px dashed var(--rule)}
+.block{margin-top:18px;padding-top:14px;border-top:2px solid var(--ink)}
+.blocktitle{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 4px}
+.duty{padding:14px 0;border-top:1px solid var(--rule-soft)}
+.duty:first-of-type{border-top:none}
 .dzone{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
 .dtask{font-size:19px;font-weight:600;margin:3px 0 9px;letter-spacing:-.01em}
 .dlabel{font-size:12.5px;color:var(--ink-soft);margin-bottom:5px}
@@ -121,57 +77,74 @@ button:focus-visible,input:focus-visible,.sug:focus-visible{outline:2px solid va
 .leadlist li{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--rule-soft);font-size:14.5px}
 .leadlist li span:first-child{flex:1;font-weight:500}
 .leadlist li span:last-child{color:var(--ink-soft);text-align:right}
-.none{color:var(--ink-soft);font-size:14.5px;padding:6px 0 14px}
+.none{color:var(--ink-soft);font-size:14.5px;padding:8px 0 12px}
 
-/* ---------- 명단 이름 ---------- */
+/* 이름 */
 .names{display:flex;flex-wrap:wrap;gap:0 2px;font-size:15.5px}
 .nm{padding:1px 3px;white-space:nowrap}
 .nm:not(:last-child)::after{content:"·";color:#B9CCC6;margin-left:5px}
-.nm.me{
-  font-weight:700;color:var(--me-text);
-  background-image:linear-gradient(var(--marker),var(--marker));
-  background-repeat:no-repeat;background-position:0 62%;background-size:0% 72%;
-  animation:swipe .42s cubic-bezier(.2,.75,.3,1) forwards;
-}
+.nm.me,.seat.me{font-weight:700;color:var(--me-text);background-image:linear-gradient(var(--marker),var(--marker));background-repeat:no-repeat;background-position:0 62%;background-size:0% 72%;animation:swipe .42s cubic-bezier(.2,.75,.3,1) forwards}
 .nm.me::after{color:#B9CCC6}
 @keyframes swipe{to{background-size:100% 72%}}
 
-/* ---------- 전체 배정표 ---------- */
-.sectitle{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--ink-soft);
-  margin:36px 0 14px;padding-top:14px;border-top:2px solid var(--ink);
-}
+/* 탭 */
+.tabs{display:flex;gap:6px;margin:34px 0 14px;padding-top:14px;border-top:2px solid var(--ink);flex-wrap:wrap}
+.tab{background:transparent;color:var(--ink-soft);border:1.5px solid var(--rule);font-size:14px;font-weight:600;padding:8px 14px}
+.tab:hover{background:var(--card);color:var(--ink)}
+.tab[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel[hidden]{display:none}
+
+/* 구역 카드 */
 .zone{background:var(--card);border:1px solid var(--rule);margin-bottom:14px;box-shadow:var(--shadow)}
-.zhead{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:13px 16px;background:#F7FAF8;border-bottom:1px solid var(--rule);
-}
+.zhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;background:#F7FAF8;border-bottom:1px solid var(--rule)}
 .zname{font-family:"Gowun Batang",serif;font-size:21px;font-weight:700;letter-spacing:-.01em}
 .zlead{font-size:13px;color:var(--ink-soft);white-space:nowrap}
 .zlead b{color:var(--stamp);font-weight:600}
 .row{display:grid;grid-template-columns:38% 1fr;gap:14px;padding:11px 16px;border-top:1px solid var(--rule-soft)}
 .row:first-of-type{border-top:none}
 .row.split{border-top:1.5px dashed var(--rule)}
-.task{font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.45}
+.task{font-size:14.5px;font-weight:500;line-height:1.45}
 .grp{font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:1px}
 .row .names{font-size:14.5px}
-.row.hit{background:#FFFDF0}
+.row.hit,.car.hit{background:#FFFDF0}
+
+/* 차량 */
+.route{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;color:var(--teal);margin:0 0 12px}
+.route b{background:var(--marker);color:var(--ink);font-weight:500;padding:2px 7px}
+.car{display:grid;grid-template-columns:34% 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--rule);border-bottom:none;padding:12px 16px}
+.car:last-of-type{border-bottom:1px solid var(--rule)}
+.cname{font-size:14.5px;font-weight:600}
+.ccap{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-soft);display:block;font-weight:400}
+
+/* 버스 좌석 */
+.bus{background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow);padding:14px 12px 16px;margin-top:16px}
+.bushead{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 10px;border-bottom:1px solid var(--rule)}
+.bushead .zname{font-size:19px}
+.buscols{display:grid;grid-template-columns:22px 1fr 1fr 26px 1fr 1fr;gap:4px;padding:8px 4px 4px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.06em;color:var(--ink-soft);text-align:center}
+.buscols span:nth-child(2){grid-column:2/4}
+.buscols span:nth-child(3){grid-column:5/7}
+.busrow{display:grid;grid-template-columns:22px 1fr 1fr 26px 1fr 1fr;gap:4px;padding:0 4px;margin-bottom:4px}
+.rn{font-family:"IBM Plex Mono",monospace;font-size:10px;color:#A8BFBA;display:flex;align-items:center;justify-content:center}
+.seat{border:1px solid var(--rule);background:#FBFDFC;font-size:13.5px;text-align:center;padding:8px 2px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seat.empty{background:transparent;border-style:dashed;border-color:#E3ECE8}
+.buslegend{font-size:11.5px;color:var(--ink-soft);text-align:center;padding-top:10px;font-family:"IBM Plex Mono",monospace}
 
 footer{margin-top:34px;font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.7}
 
 @media (max-width:560px){
-  .wrap{padding:0 14px 60px}
-  .masthead{padding:26px 0 18px}
-  .row{grid-template-columns:1fr;gap:4px;padding:12px 14px}
-  .task{font-weight:600}
-  .finder-inner{gap:6px}
+  .wrap{padding:0 12px 60px}
+  .masthead{padding:24px 0 16px}
+  .row,.car{grid-template-columns:1fr;gap:4px;padding:12px 14px}
+  .task,.cname{font-weight:600}
   button{padding:0 16px;font-size:15px}
-  .rcard{padding:18px 16px 4px}
+  .rcard{padding:18px 16px 6px}
+  .bus{padding:12px 6px 14px}
+  .buscols,.busrow{grid-template-columns:18px 1fr 1fr 16px 1fr 1fr;gap:3px}
+  .seat{font-size:12px;padding:7px 1px}
+  .tab{font-size:13px;padding:7px 11px}
 }
 @media (prefers-reduced-motion:reduce){
-  .nm.me{animation:none;background-size:100% 72%}
-  *{transition:none!important}
+  .nm.me,.seat.me{animation:none;background-size:100% 72%}
 }
 </style>
 </head>
@@ -179,20 +152,18 @@ footer{margin-top:34px;font-size:12.5px;color:var(--ink-soft);text-align:center;
 <div class="wrap">
 
   <header class="masthead">
-    <p class="eyebrow">2026 하계수련회 · 당진</p>
-    <h1>첫째 날 청소 구역<span class="day">주일 · 구역별 배정표</span></h1>
+    <p class="eyebrow">2026 하계수련회 · 당진 · 8월 2일–6일</p>
+    <h1>청소 구역 &amp; 차량 배치<span class="sub">이름을 검색하면 내 담당과 탑승 차량이 한 번에</span></h1>
     <div class="tally">
-      <span>구역 <b id="tZone">0</b></span>
-      <span>세부 항목 <b id="tTask">0</b></span>
-      <span>배정 인원 <b id="tPeople">0</b></span>
+      <span>청소 구역 <b id="tZone">0</b></span>
+      <span>차량 <b id="tCar">0</b></span>
+      <span>등록 인원 <b id="tPeople">0</b></span>
     </div>
   </header>
 
   <section class="finder">
     <div class="finder-inner">
-      <div class="field">
-        <input id="q" type="search" placeholder="이름을 입력하세요 (예: 서영)" autocomplete="off" enterkeyhint="search" aria-label="이름 검색">
-      </div>
+      <div class="field"><input id="q" type="search" placeholder="이름을 입력하세요 (예: 서영)" autocomplete="off" enterkeyhint="search" aria-label="이름 검색"></div>
       <button id="go" type="button">찾기</button>
     </div>
     <div class="sugs" id="sugs"></div>
@@ -200,16 +171,24 @@ footer{margin-top:34px;font-size:12.5px;color:var(--ink-soft);text-align:center;
 
   <div class="result" id="result" role="status" aria-live="polite"></div>
 
-  <h2 class="sectitle">전체 배정표</h2>
-  <div id="board"></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-clean" type="button" role="tab" aria-selected="true" aria-controls="p-clean">청소 구역</button>
+    <button class="tab" id="tab-go" type="button" role="tab" aria-selected="false" aria-controls="p-go">8/2 서울→당진</button>
+    <button class="tab" id="tab-back" type="button" role="tab" aria-selected="false" aria-controls="p-back">8/6 당진→서울</button>
+  </div>
+
+  <div class="panel" id="p-clean" role="tabpanel" aria-labelledby="tab-clean"></div>
+  <div class="panel" id="p-go" role="tabpanel" aria-labelledby="tab-go" hidden></div>
+  <div class="panel" id="p-back" role="tabpanel" aria-labelledby="tab-back" hidden></div>
 
   <footer>
-    첫째 날 청소는 저녁 집회 전까지 마칩니다.<br>배정에 빠진 내용이 있으면 생활스텝에게 알려 주세요.
+    첫째 날 청소는 저녁 집회 전까지 마칩니다.<br>배정이나 배차에 바뀐 내용이 있으면 생활스텝에게 알려 주세요.
   </footer>
 </div>
 
 <script>
-const DATA = [
+/* ===== 청소 구역 ===== */
+const CLEAN = [
   {zone:"성전", lead:"서영", rows:[
     {task:"강대상, 음향 설비", members:["이효진","정지연","최정화","성연후","박동민"]},
     {task:"바닥, 벽", members:["임정희","김기영"]},
@@ -249,148 +228,266 @@ const DATA = [
     {task:"생활물품 정리", members:["백승은"]},
     {task:"옷걸이", members:["김성관","박하성","박서준"]},
     {task:"예초기", members:["김한식","강경남"]},
-    {task:"게임물품 정리", group:"게임스탭", members:["강산","송원재","심기웅","박준우","사토미"], split:true, noLead:true},
-    {task:"인체실험", members:["김한식","박준우","이아영","김다해","이정화"], noLead:true}
+    {task:"게임물품 정리", group:"게임스탭", members:["강산","송원재","심기웅","박준우","사토미"], split:true},
+    {task:"인체실험", members:["김한식","박준우","이아영","김다해","이정화"]}
   ]}
 ];
 
+/* ===== 차량 배치 ===== */
+const TRIPS = [
+  {
+    panel:"p-go", date:"8/2 (주일)", route:"서울 ⇒ 당진",
+    cars:[
+      {name:"목회자님 카니발", members:["담임목사님","원로목사님","원로사모님","사모님","차하경"]},
+      {name:"심기웅 카니발", members:["심기웅"]},
+      {name:"박준우 카니발", members:["박준우"]},
+      {name:"예봉이", members:["정동훈","이재경"]},
+      {name:"박동민 K3", members:["박동민","차경미","박하성","박하진"]},
+      {name:"홍상민 카니발", members:["홍상민","홍자현","홍아율","홍지후"]},
+      {name:"안효섭 아반떼", members:["안효섭","박영희","안예봄"]},
+      {name:"강산 아반떼", members:["강산","조성숙","강예린","강예준"]},
+      {name:"박정근 K9", members:["박정근","김자영","박서연","박서준"]},
+      {name:"이순명 그랜져", members:["이순명","최승원","최지웅","성연후"]},
+      {name:"서영 소나타", members:["서영","최정화","김현수"]},
+      {name:"이태호 스포티지", members:["이태호","김해림","이효진","이정화"]}
+    ],
+    bus:[
+      ["주민준","강경남","정지연","송원재"],
+      ["백주원","김혜성",null,"김치덕"],
+      ["홍윤미","송민서","이아영","임지영"],
+      ["이지원","전혜경","연가은","김다해"],
+      ["윤해영","강지희","김한식","임은성"],
+      ["신세호","강준석","이정우","이재형"],
+      ["김태현","박정훈","전수진","정순희"],
+      ["김다현","연가희","김혜영","김유경"],
+      ["사토미","정미정","백승은","이채령"],
+      ["유아란","김두연","김한나","최송희"],
+      ["임정희","김형석","김성관","김기영"]
+    ]
+  },
+  {
+    panel:"p-back", date:"8/6 (목)", route:"당진 ⇒ 서울",
+    solo:["이재형","최송희"],
+    cars:[
+      {name:"목회자님 카니발", members:["담임목사님","원로목사님","원로사모님","사모님","차하경"]},
+      {name:"심기웅 카니발", members:["심기웅"]},
+      {name:"박준우 카니발", members:["박준우"]},
+      {name:"예봉이", members:["정동훈","이재경"]},
+      {name:"박동민 K3", members:["박동민","차경미","박하성","박하진"]},
+      {name:"홍상민 카니발", members:["홍상민","홍자현","홍아율","홍지후"]},
+      {name:"안효섭 아반떼", members:["안효섭","박영희","안예봄"]},
+      {name:"강산 아반떼", members:["강산","조성숙","강예린","강예준"]},
+      {name:"박정근 K9", members:["박정근","김자영","박서연","박서준"]},
+      {name:"이순명 그랜져", members:["이순명","임은성","최정화","이지원"]},
+      {name:"서영 소나타", members:["서영","전혜경","이정화"]},
+      {name:"이태호 스포티지", members:["이태호","김해림","이효진","성연후"]}
+    ],
+    bus:[
+      ["주민준","강경남","정지연","송원재"],
+      ["백주원","김혜성",null,"김치덕"],
+      ["홍윤미","송민서","이아영","임지영"],
+      ["최지웅","최승원","연가은","김다해"],
+      ["윤해영","강지희","김한식",null],
+      ["신세호","강준석","이정우","김현수"],
+      ["김태현","박정훈","전수진","정순희"],
+      ["김다현","연가희","김혜영","김유경"],
+      ["사토미","정미정","백승은","이채령"],
+      ["유아란","김두연","김한나",null],
+      ["임정희","김형석","김성관","김기영"]
+    ]
+  }
+];
+
 const norm = s => (s||"").replace(/\s+/g,"").trim();
-const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 /* 색인 */
 const people = [];
-DATA.forEach((z,zi)=>z.rows.forEach((r,ri)=>r.members.forEach(m=>{
-  if(!people.includes(m)) people.push(m);
-  r._id = "r"+zi+"-"+ri;
-})));
-DATA.forEach(z=>{ if(!people.includes(z.lead)) people.push(z.lead); });
+const add = n => { if(n && n!=="자모팀" && !people.includes(n)) people.push(n); };
+CLEAN.forEach(z=>{ add(z.lead); z.rows.forEach(r=>r.members.forEach(add)); });
+TRIPS.forEach(t=>{ t.cars.forEach(c=>c.members.forEach(add)); t.bus.forEach(r=>r.forEach(add)); (t.solo||[]).forEach(add); });
 people.sort((a,b)=>a.localeCompare(b,"ko"));
 
-const totalTasks = DATA.reduce((n,z)=>n+z.rows.length,0);
-document.getElementById("tZone").textContent = DATA.length;
-document.getElementById("tTask").textContent = totalTasks;
-document.getElementById("tPeople").textContent = people.filter(p=>p!=="자모팀").length;
+document.getElementById("tZone").textContent = CLEAN.length;
+document.getElementById("tCar").textContent = TRIPS[0].cars.length + 1;
+document.getElementById("tPeople").textContent = people.length;
 
-/* 전체 배정표 그리기 */
-const board = document.getElementById("board");
-board.innerHTML = DATA.map((z,zi)=>`
+/* ===== 전체 배정표 ===== */
+document.getElementById("p-clean").innerHTML = CLEAN.map(z=>`
   <section class="zone">
-    <div class="zhead">
-      <span class="zname">${esc(z.zone)}</span>
-      <span class="zlead">총괄 <b>${esc(z.lead)}</b></span>
-    </div>
-    ${z.rows.map((r,ri)=>`
-      <div class="row${r.split?" split":""}" id="r${zi}-${ri}">
+    <div class="zhead"><span class="zname">${esc(z.zone)}</span><span class="zlead">총괄 <b>${esc(z.lead)}</b></span></div>
+    ${z.rows.map(r=>`
+      <div class="row${r.split?" split":""}">
         <div class="task">${r.group?`<span class="grp">${esc(r.group)}</span>`:""}${esc(r.task)}</div>
-        <div class="names">${r.members.length
-          ? r.members.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join("")
-          : `<span style="color:#9FB4B4">배정 없음</span>`}</div>
+        <div class="names">${r.members.length?r.members.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join(""):`<span style="color:#9FB4B4">배정 없음</span>`}</div>
       </div>`).join("")}
   </section>`).join("");
 
-/* 검색 */
-const q = document.getElementById("q");
-const sugs = document.getElementById("sugs");
-const result = document.getElementById("result");
+function seatHTML(n){
+  return n ? `<span class="seat" data-n="${esc(n)}">${esc(n)}</span>` : `<span class="seat empty"></span>`;
+}
 
-function renderNames(members, me){
-  return members.map(m=>`<span class="nm${m===me?" me":""}">${esc(m)}</span>`).join("");
+TRIPS.forEach(t=>{
+  const carCount = t.cars.reduce((n,c)=>n+c.members.length,0);
+  const busCount = t.bus.flat().filter(Boolean).length;
+  document.getElementById(t.panel).innerHTML = `
+    <p class="route">${esc(t.date)} <b>${esc(t.route)}</b> · 승용차 ${carCount}명 · 버스 ${busCount}명${(t.solo||[]).length?` · 개별 ${t.solo.length}명`:""} · 합계 ${carCount+busCount+(t.solo||[]).length}명</p>
+    ${t.cars.map(c=>`
+      <div class="car">
+        <div class="cname">${esc(c.name)}<span class="ccap">${c.members.length}명</span></div>
+        <div class="names">${c.members.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join("")}</div>
+      </div>`).join("")}
+    <div class="bus">
+      <div class="bushead"><span class="zname">버스</span><span class="zlead">${busCount}명</span></div>
+      <div class="buscols"><span></span><span>운전자석 쪽</span><span>출입문 쪽</span></div>
+      ${t.bus.map((row,ri)=>`
+        <div class="busrow">
+          <span class="rn">${ri+1}</span>
+          ${seatHTML(row[0])}${seatHTML(row[1])}
+          <span></span>
+          ${seatHTML(row[2])}${seatHTML(row[3])}
+        </div>`).join("")}
+      <p class="buslegend">↑ 앞쪽 · 아래로 갈수록 뒷좌석</p>
+    </div>
+    ${(t.solo||[]).length?`
+    <div class="zone" style="margin-top:16px">
+      <div class="zhead"><span class="zname">개별 출발</span><span class="zlead">${t.solo.length}명</span></div>
+      <div class="row"><div class="task">따로 이동</div>
+        <div class="names">${t.solo.map(m=>`<span class="nm" data-n="${esc(m)}">${esc(m)}</span>`).join("")}</div></div>
+    </div>`:""}`;
+});
+
+/* ===== 탭 ===== */
+const TABS = [["tab-clean","p-clean"],["tab-go","p-go"],["tab-back","p-back"]];
+function openTab(id){
+  TABS.forEach(([tb,pn])=>{
+    const on = tb===id;
+    document.getElementById(tb).setAttribute("aria-selected", on);
+    document.getElementById(pn).hidden = !on;
+  });
+}
+TABS.forEach(([tb])=>document.getElementById(tb).addEventListener("click",()=>openTab(tb)));
+
+/* ===== 검색 ===== */
+const q = document.getElementById("q"), sugs = document.getElementById("sugs"), result = document.getElementById("result");
+const renderNames = (arr,me) => arr.map(m=>`<span class="nm${m===me?" me":""}">${esc(m)}</span>`).join("");
+
+function tripInfo(t,name){
+  const car = t.cars.find(c=>c.members.includes(name));
+  if(car){
+    const others = car.members.filter(m=>m!==name);
+    return `<div class="duty">
+      <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
+      <div class="dtask">${esc(car.name)}</div>
+      <div class="dlabel">${others.length?"함께 타는 사람 "+others.length+"명":"단독 탑승"}</div>
+      <div class="names">${renderNames(car.members,name)}</div>
+    </div>`;
+  }
+  if((t.solo||[]).includes(name)){
+    return `<div class="duty">
+      <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
+      <div class="dtask">개별 출발</div>
+      <div class="dlabel">단체 차량이 아닌 개별 이동입니다.</div>
+    </div>`;
+  }
+  let ri=-1, ci=-1;
+  t.bus.forEach((row,i)=>row.forEach((n,j)=>{ if(n===name){ ri=i; ci=j; }}));
+  if(ri>=0){
+    const side = ci<2 ? "운전자석 쪽" : "출입문 쪽";
+    const pair = ci<2 ? [t.bus[ri][0], t.bus[ri][1]] : [t.bus[ri][2], t.bus[ri][3]];
+    const seatmate = pair.find(n=>n && n!==name);
+    return `<div class="duty">
+      <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
+      <div class="dtask">버스 · ${ri+1}번째 줄 · ${side}</div>
+      <div class="dlabel">${seatmate?"옆자리":"옆자리 없음 (빈자리)"}</div>
+      <div class="names">${renderNames(pair.filter(Boolean),name)}</div>
+    </div>`;
+  }
+  return `<div class="duty">
+    <div class="dzone">${esc(t.date)} · ${esc(t.route)}</div>
+    <div class="dtask" style="color:#9FB4B4">배차 없음</div>
+    <div class="dlabel">배차표에 이름이 없습니다. 생활스텝에게 확인해 주세요.</div>
+  </div>`;
 }
 
 function show(name){
-  const leads = DATA.filter(z=>z.lead===name);
+  const leads = CLEAN.filter(z=>z.lead===name);
   const duties = [];
-  DATA.forEach((z,zi)=>z.rows.forEach((r,ri)=>{
-    if(r.members.includes(name)) duties.push({zone:z.zone, row:r, id:"r"+zi+"-"+ri});
-  }));
+  CLEAN.forEach(z=>z.rows.forEach(r=>{ if(r.members.includes(name)) duties.push({zone:z.zone,row:r}); }));
 
   let html = `<div class="rcard">
-    <div class="rhead">
-      <span class="rname">${esc(name)}</span>
-      <button class="clear" id="clr" type="button">전체 배정표로 돌아가기</button>
-    </div>
-    <p class="rmeta">첫째 날(주일) 청소 배정</p>`;
+    <div class="rhead"><span class="rname">${esc(name)}</span>
+      <button class="clear" id="clr" type="button">검색 지우기</button></div>
+    <p class="rmeta">2026 하계수련회 · 청소 &amp; 배차</p>`;
 
+  leads.forEach(z=>{ html += `<div class="stamp"><small>총괄</small>${esc(z.zone)}</div>`; });
+
+  html += `<div class="block"><p class="blocktitle">첫째 날(주일) 청소</p>`;
   leads.forEach(z=>{
-    html += `<div class="stamp"><small>총괄</small>${esc(z.zone)}</div>`;
+    html += `<div class="duty"><div class="dzone">${esc(z.zone)} 총괄</div>
+      <div class="dtask">${esc(z.zone)} 구역 전체를 확인해 주세요</div>
+      <ul class="leadlist">${z.rows.map(r=>`<li><span>${esc(r.task)}</span><span>${r.members.length?esc(r.members.join(", ")):"배정 없음"}</span></li>`).join("")}</ul></div>`;
   });
-
-  if(leads.length){
-    leads.forEach(z=>{
-      html += `<div class="duty"><div class="dzone">${esc(z.zone)} 총괄</div>
-        <div class="dtask">${esc(z.zone)} 구역 전체를 확인해 주세요</div>
-        <ul class="leadlist">${z.rows.map(r=>`<li><span>${esc(r.task)}</span><span>${r.members.length?esc(r.members.join(", ")):"배정 없음"}</span></li>`).join("")}</ul>
-      </div>`;
-    });
-  }
-
   if(duties.length){
     duties.forEach(d=>{
       html += `<div class="duty">
         <div class="dzone">${esc(d.zone)}</div>
         <div class="dtask">${d.row.group?esc(d.row.group)+" · ":""}${esc(d.row.task)}</div>
         <div class="dlabel">함께 청소하는 사람 ${d.row.members.length}명</div>
-        <div class="names">${renderNames(d.row.members, name)}</div>
-      </div>`;
+        <div class="names">${renderNames(d.row.members,name)}</div></div>`;
     });
   } else if(!leads.length){
-    html += `<p class="none">배정된 청소 구역이 없습니다. 생활스텝에게 문의해 주세요.</p>`;
+    html += `<p class="none">배정된 청소 구역이 없습니다.</p>`;
   } else {
-    html += `<p class="none">개별 배정 항목 없이 구역 총괄만 맡고 있습니다.</p>`;
+    html += `<p class="none">개별 항목 없이 구역 총괄만 맡고 있습니다.</p>`;
   }
-
   html += `</div>`;
+
+  html += `<div class="block"><p class="blocktitle">차량 배치</p>${TRIPS.map(t=>tripInfo(t,name)).join("")}</div></div>`;
+
   result.innerHTML = html;
-
-  /* 전체 배정표에도 표시 */
-  document.querySelectorAll(".row").forEach(el=>el.classList.remove("hit"));
-  document.querySelectorAll(".nm").forEach(el=>el.classList.remove("me"));
-  document.querySelectorAll('.names .nm[data-n="'+CSS.escape(name)+'"]').forEach(el=>{
-    el.classList.add("me");
-    el.closest(".row").classList.add("hit");
-  });
-
+  highlight(name);
   document.getElementById("clr").addEventListener("click", reset);
   result.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
+function highlight(name){
+  document.querySelectorAll(".row,.car").forEach(el=>el.classList.remove("hit"));
+  document.querySelectorAll(".nm,.seat").forEach(el=>el.classList.remove("me"));
+  if(!name) return;
+  document.querySelectorAll('[data-n="'+CSS.escape(name)+'"]').forEach(el=>{
+    el.classList.add("me");
+    const p = el.closest(".row,.car"); if(p) p.classList.add("hit");
+  });
+}
+
 function notFound(term){
-  result.innerHTML = `<div class="rcard">
-    <div class="rhead"><span class="rname">${esc(term)}</span>
-    <button class="clear" id="clr" type="button">전체 배정표로 돌아가기</button></div>
-    <p class="none">배정표에서 찾을 수 없는 이름입니다. 아래 전체 배정표에서 확인하거나 생활스텝에게 문의해 주세요.</p>
-  </div>`;
+  result.innerHTML = `<div class="rcard"><div class="rhead"><span class="rname">${esc(term)}</span>
+    <button class="clear" id="clr" type="button">검색 지우기</button></div>
+    <p class="none">명단에서 찾을 수 없는 이름입니다. 아래 전체 표에서 확인하거나 생활스텝에게 문의해 주세요.</p></div>`;
   document.getElementById("clr").addEventListener("click", reset);
 }
 
 function reset(){
-  result.innerHTML = "";
-  q.value = "";
-  sugs.innerHTML = "";
-  document.querySelectorAll(".row").forEach(el=>el.classList.remove("hit"));
-  document.querySelectorAll(".nm").forEach(el=>el.classList.remove("me"));
-  q.focus();
+  result.innerHTML=""; q.value=""; sugs.innerHTML=""; highlight(null); q.focus();
 }
 
 function search(){
   const t = norm(q.value);
-  if(!t){ result.innerHTML=""; return; }
-  let hit = people.find(p=>norm(p)===t) || people.find(p=>norm(p).startsWith(t));
-  if(hit){ q.value = hit; sugs.innerHTML=""; show(hit); }
-  else notFound(q.value.trim());
+  if(!t){ result.innerHTML=""; highlight(null); return; }
+  const hit = people.find(p=>norm(p)===t) || people.find(p=>norm(p).startsWith(t)) || people.find(p=>norm(p).includes(t));
+  if(hit){ q.value=hit; sugs.innerHTML=""; show(hit); } else notFound(q.value.trim());
 }
 
-q.addEventListener("input", ()=>{
+q.addEventListener("input",()=>{
   const t = norm(q.value);
-  if(!t){ sugs.innerHTML=""; return; }
-  const list = people.filter(p=>norm(p).includes(t)).slice(0,8);
-  sugs.innerHTML = list.map(p=>`<button class="sug" type="button">${esc(p)}</button>`).join("");
+  sugs.innerHTML = t ? people.filter(p=>norm(p).includes(t)).slice(0,8).map(p=>`<button class="sug" type="button">${esc(p)}</button>`).join("") : "";
 });
-sugs.addEventListener("click", e=>{
-  const b = e.target.closest(".sug"); if(!b) return;
-  q.value = b.textContent; sugs.innerHTML=""; show(b.textContent);
+sugs.addEventListener("click",e=>{
+  const b=e.target.closest(".sug"); if(!b) return;
+  q.value=b.textContent; sugs.innerHTML=""; show(b.textContent);
 });
-q.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); search(); }});
+q.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); search(); }});
 document.getElementById("go").addEventListener("click", search);
 </script>
 </body>
